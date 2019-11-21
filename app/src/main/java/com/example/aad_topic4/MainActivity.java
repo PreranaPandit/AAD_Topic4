@@ -2,11 +2,13 @@ package com.example.aad_topic4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private Map<String, String> dictionary;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,15 @@ public class MainActivity extends AppCompatActivity {
                 String country = parent.getItemAtPosition(position).toString();
                 String capital = dictionary.get(country);
 
-                Toast.makeText(getApplicationContext(),capital.toString(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, IntentActivity.class);
+
+                intent.putExtra("capital",capital);
+                startActivity(intent);
+
+                //Toast.makeText(getApplicationContext(),capital.toString(),Toast.LENGTH_LONG).show();
             }
         });
+
+
     }
 }
