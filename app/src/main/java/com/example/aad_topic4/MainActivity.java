@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
         lsCountries.setAdapter(adapter);
 
-//        lsCountries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String country = parent.getItemAtPosition(position).toString();
-//                String capital = dictionary.get(country);
-//
-//                Toast.makeText(getApplicationContext(),capital.toString(),Toast.LENGTH_LONG).show();
-//            }
+        lsCountries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String country = parent.getItemAtPosition(position).toString();
+                String capital = dictionary.get(country);
+
+                Toast.makeText(getApplicationContext(),capital.toString(),Toast.LENGTH_LONG).show();
+            }
         });
     }
 }
