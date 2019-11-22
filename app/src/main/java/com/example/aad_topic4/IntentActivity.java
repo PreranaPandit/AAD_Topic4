@@ -19,6 +19,7 @@ public class IntentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent);
 
+        //Receiving message from another activity
        Bundle bundle = getIntent().getExtras();
 
        if(bundle!=null)
@@ -28,6 +29,7 @@ public class IntentActivity extends AppCompatActivity {
            tvCapital.setText(capital);
        }
        else {
+           //Use of toast that pops up the message as a message box on the window.
            Toast.makeText(this, "No capital",Toast.LENGTH_LONG).show();
        }
 
